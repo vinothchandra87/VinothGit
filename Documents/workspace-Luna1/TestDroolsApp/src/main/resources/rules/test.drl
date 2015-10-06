@@ -1,0 +1,34 @@
+//created on: Oct 2, 2015
+
+package com.sample
+dialect "mvel";
+
+
+rule "Scrap-positive"
+ when
+        Buyer(saleDocumentType=="scrap")
+        Buyer(addressOfBuyer.country=="spain",licenseType=="iaedismantler")
+    then
+        System.out.println("ScrapRule");
+      
+
+end
+
+
+rule "Repair-positive"
+     when
+     	Buyer(saleDocumentType=="repair")
+        Buyer(addressOfBuyer.country=="spain",licenseType=="iaevehiclerelated") || Buyer(addressOfBuyer.country!="spain",licenseType =="iaeequivalent")
+    then
+        System.out.println("RepairRule");
+       
+
+end
+
+rule "UsedCar-positive"
+	when
+		Buyer(saleDocumentType=="usedcar") 
+		Buyer(addressOfBuyer.country=="spain",licenseType=="iaevehiclerelated") || Buyer(addressOfBuyer.country!="spain",licenseType=="vehicleresalelicense")
+	then
+		System.out.println("Used-Car rule");
+end
