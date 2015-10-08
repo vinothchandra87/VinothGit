@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Bids Elgibility</h1>
+    <form action="#" th:action="@{/BidsEligibility}" th:object="${BidsEligibility}" method="get">
+    	<p>LotID: <input type="text" th:field="*{lotId}" /></p>
+    	<p>MemberID: <input type="text" th:field="*{memId}" /></p>
+        <p th:text="${BidEligible}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>

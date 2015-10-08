@@ -1,0 +1,8 @@
+com/copart/Enity/Lot.class
+com/copart/Repository/MemberRepository.class
+com/copart/Enity/Member.class
+com/copart/Controller/BidsEligibilityController.class
+com/copart/Application/BidsEligibityApplication.class
+com/copart/Repository/MemberLicenseRepository.class
+com/copart/Enity/MemberLicense.class
+com/copart/Repository/LotRepository.class
